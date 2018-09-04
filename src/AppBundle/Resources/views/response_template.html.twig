@@ -1,0 +1,50 @@
+<html>
+<head>
+   <title>тестовое задание</title>
+</head>
+
+<body>
+    <table border="2" width="100%">
+        <tr>
+            <td colspan="2" >информация про клиента</td>
+        </tr>
+        <tr>
+            <td>название клиента</td>
+            <td>{{ contract.customer.name }}</td>
+        </tr>
+        <tr>
+            <td>компания</td>
+            <td>{{ contract.customer.company }}</td>
+        </tr>
+
+        <tr>
+            <td colspan="2" >информация по договору</td>
+        </tr>
+        <tr>
+            <td>номер договора</td>
+            <td>{{ contract.number }}</td>
+        </tr>
+        <tr>
+            <td>дата подписания</td>
+            <td>{{ contract.dateSign|date('d.m.Y') }}</td>
+        </tr>
+
+        <tr>
+            <td colspan="2" >информация про сервисы</td>
+        </tr>
+        <tr>
+            <td colspan="2" >
+                {% for service in services %}
+                    {{ service.title }} <br>
+                {% endfor %}
+            </td>
+        </tr>
+
+
+    </table>
+</body>
+</html>
+
+
+
+
